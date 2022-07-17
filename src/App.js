@@ -1,15 +1,18 @@
-import React, { Component } from 'react'
-import Table from './Table'
+import React, { useState } from 'react'
+import Form from './Form'
+import Photos from './Photos'
 
-class App extends Component  {
-    render() {
-      return (
-        <div className="App">
-          <h1>Hello, React!</h1>
-          <Table />
+const App = () => {
+    const [photos, setPhotos] = useState([]);
+    const [text, setText] = useState('');
+
+    return (
+        <div className='wrapper' >
+            <Form setPhotos={setPhotos} setText={setText} />
+            <Photos photos={photos} text={text} />
         </div>
-      )
-    }
+    )
+
 }
 
 export default App
